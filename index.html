@@ -6,181 +6,151 @@
 <title>Happy Birthday ❤️</title>
 
 <style>
-    * {
-        box-sizing: border-box;
-    }
+* { box-sizing: border-box; }
 
-    body {
-        margin: 0;
-        font-family: 'Segoe UI', system-ui, sans-serif;
-        background: linear-gradient(180deg, #ff5f8d, #ff9a9e);
-        color: white;
-        text-align: center;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: linear-gradient(180deg, #ff5f8d, #ff9a9e);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
 
-    h1 {
-        font-size: clamp(2.2rem, 6vw, 3rem);
-        margin-top: 30px;
-        padding: 0 15px;
-        text-shadow: 0 0 20px rgba(255,255,255,0.8);
-    }
+h1 {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+    margin-top: 30px;
+}
 
-    h2 {
-        font-size: clamp(1.2rem, 4vw, 1.6rem);
-        margin: 10px 15px;
-    }
+.card {
+    background: rgba(255,255,255,0.15);
+    margin: 20px auto;
+    padding: 22px;
+    width: 92%;
+    max-width: 650px;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
 
-    .card {
-        background: rgba(255,255,255,0.15);
-        margin: 20px auto;
-        padding: 22px;
-        width: 92%;
-        max-width: 650px;
-        border-radius: 22px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-        line-height: 1.6;
-    }
+button {
+    width: 90%;
+    max-width: 280px;
+    background: white;
+    color: #ff4f7b;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px auto;
+}
 
-    p {
-        font-size: 1rem;
-    }
+button:hover { background: #ffe4ec; }
 
-    button {
-        width: 90%;
-        max-width: 280px;
-        background: white;
-        color: #ff4f7b;
-        border: none;
-        padding: 14px;
-        font-size: 1rem;
-        border-radius: 30px;
-        cursor: pointer;
-        margin: 10px auto;
-        display: block;
-        transition: transform 0.2s, background 0.2s;
-    }
+.hidden { display: none; }
 
-    button:active {
-        transform: scale(0.96);
-    }
+.slideshow {
+    margin-top: 15px;
+}
 
-    button:hover {
-        background: #ffe4ec;
-    }
+.slideshow img {
+    width: 100%;
+    border-radius: 18px;
+    animation: fade 1.5s;
+}
 
-    .hidden {
-        display: none;
-        margin-top: 15px;
-        font-size: 1.05rem;
-    }
+.caption {
+    margin-top: 10px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
 
-    footer {
-        margin: 30px 10px;
-        font-size: 0.85rem;
-        opacity: 0.9;
-    }
+@keyframes fade {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
 
-    .heart {
-        position: fixed;
-        bottom: -20px;
-        font-size: 18px;
-        animation: float 6s linear infinite;
-        color: #ffd1dc;
-        pointer-events: none;
-    }
+.heart {
+    position: fixed;
+    bottom: -20px;
+    animation: float 6s linear infinite;
+    pointer-events: none;
+}
 
-    @keyframes float {
-        0% { transform: translateY(0); opacity: 1; }
-        100% { transform: translateY(-100vh); opacity: 0; }
-    }
+@keyframes float {
+    to { transform: translateY(-100vh); opacity: 0; }
+}
 </style>
 </head>
 
 <body>
 
-<!-- Background Music -->
+<!-- 🎵 Lofi Music -->
 <audio id="music" loop>
-    <source src="DIL - NINJA Valentines Special New Punjabi Songs 2016 New Punjabi Songs 2016 @Mad4Music1.mp3" type="audio/mpeg">
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_0f2f6d9c6b.mp3">
 </audio>
 
-<h1>🎂 Happy Birthday</h1>
-<h2>To the Girl Who Owns My Heart ❤️</h2>
+<h1>🎂 Happy Birthday Freya ❤️</h1>
 
 <div class="card">
-    <p>
-        Freya, today is not just your birthday…  
-        it’s the day the world became more beautiful ✨  
-        Your smile, your strength, and your kindness  
-        are my favorite things in this universe.
-    </p>
+<button onclick="playMusic()">Play Lofi Music 🎶</button>
+<button onclick="lifeWithMe()">Life with me 🌍❤️</button>
+
+<div id="life" class="hidden">
+<div class="slideshow">
+<img id="slide" src="">
+</div>
+<div class="caption" id="caption"></div>
+</div>
 </div>
 
-<div class="card">
-    <h2>💐 Birthday Wishes</h2>
-    <p>
-        🌸 May your life always glow with happiness  
-        🌸 May your dreams slowly turn real  
-        🌸 May your heart always stay strong  
-        🌸 And may love find you at every step
-    </p>
-</div>
-
-<div class="card">
-    <h2>📚 A Special NEET Wish</h2>
-    <p>
-        I believe in you more than words can say.  
-        May your hard work shine in your NEET exam,  
-        your mind stay calm, and your efforts  
-        turn into a beautiful success 💖
-    </p>
-</div>
-
-<div class="card">
-    <h2>💌 Little Surprises</h2>
-
-    <button onclick="playMusic()">Play Birthday Music 🎶</button>
-    <button onclick="showLove()">Message From My Heart</button>
-    <button onclick="proposal()">One Question For You 💍</button>
-
-    <div id="love" class="hidden">
-        You are not just someone special to me…  
-        you are the person I want to build  
-        my entire future with ❤️
-    </div>
-
-    <div id="ring" class="hidden">
-        Freya, will you be mine forever  
-        and someday become my wife? 💍❤️
-    </div>
-</div>
-
-<footer>
-    Made with all my love, just for you 💕
-</footer>
+<footer>Made with all my love 💕</footer>
 
 <script>
-    function playMusic() {
-        document.getElementById("music").play();
-    }
+function playMusic() {
+    document.getElementById("music").play();
+}
 
-    function showLove() {
-        document.getElementById("love").style.display = "block";
-    }
+const images = [
+ "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+ "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+ "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1",
+ "https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+];
 
-    function proposal() {
-        document.getElementById("ring").style.display = "block";
-    }
+const captions = [
+ "✈️ Traveling the world with you, hand in hand",
+ "🏖️ Sunset walks & endless talks",
+ "🏔️ Adventures feel safer with you beside me",
+ "❤️ A lifetime of love, laughs & memories"
+];
 
-    setInterval(() => {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerHTML = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = Math.random() * 16 + 14 + "px";
-        document.body.appendChild(heart);
-        setTimeout(() => heart.remove(), 6000);
-    }, 450);
+let index = 0;
+let interval;
+
+function lifeWithMe() {
+    document.getElementById("life").style.display = "block";
+    showSlide();
+    interval = setInterval(showSlide, 3000);
+}
+
+function showSlide() {
+    document.getElementById("slide").src = images[index];
+    document.getElementById("caption").innerHTML =
+        captions[index] + "<br><br>I want every tomorrow with you ❤️";
+    index = (index + 1) % images.length;
+}
+
+// floating hearts
+setInterval(() => {
+    const h = document.createElement("div");
+    h.className = "heart";
+    h.innerHTML = "❤️";
+    h.style.left = Math.random()*100 + "vw";
+    h.style.fontSize = Math.random()*20 + 15 + "px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+}, 500);
 </script>
 
 </body>
