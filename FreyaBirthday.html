@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday ❤️</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', cursive;
+        background: linear-gradient(135deg, #ff5f8d, #ff9a9e);
+        color: white;
+        text-align: center;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-top: 40px;
+        text-shadow: 0 0 20px rgba(255,255,255,0.8);
+    }
+
+    h2 {
+        margin-top: 10px;
+    }
+
+    .card {
+        background: rgba(255,255,255,0.15);
+        margin: 30px auto;
+        padding: 25px;
+        width: 85%;
+        max-width: 650px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    button {
+        background: white;
+        color: #ff4f7b;
+        border: none;
+        padding: 12px 28px;
+        font-size: 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        margin: 10px;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: #ffe4ec;
+    }
+
+    .hidden {
+        display: none;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .heart {
+        position: fixed;
+        bottom: -20px;
+        font-size: 20px;
+        animation: float 6s linear infinite;
+        color: #ffd1dc;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    footer {
+        margin: 40px 0;
+        font-size: 14px;
+        opacity: 0.9;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="music" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<h1>🎂 Happy Birthday</h1>
+<h2>To the Girl Who Owns My Heart ❤️</h2>
+
+<div class="card">
+    <p>
+        Freya, today is not just your birthday…  
+        it’s the day the universe became more beautiful ✨  
+        Your smile, your strength, and your kindness  
+        mean more to me than you’ll ever know.
+    </p>
+</div>
+
+<div class="card">
+    <h2>💐 Birthday Wishes</h2>
+    <p>
+        🌸 May your life be filled with happiness  
+        🌸 May every dream slowly turn real  
+        🌸 May you always believe in yourself  
+        🌸 And may your heart always stay as pure as it is
+    </p>
+</div>
+
+<div class="card">
+    <h2>📚 A Special Wish For NEET</h2>
+    <p>
+        I know how hard you work, how much you sacrifice,  
+        and how strong you truly are.  
+        May your NEET exam reward your dedication,  
+        and may you become the amazing doctor  
+        I already see in you 💖
+    </p>
+</div>
+
+<div class="card">
+    <h2>💌 Little Surprises</h2>
+    <button onclick="playMusic()">Play Birthday Music 🎶</button>
+    <button onclick="showLove()">Message From My Heart</button>
+    <button onclick="proposal()">One Question 💍</button>
+
+    <div id="love" class="hidden">
+        You are not just someone I care about…  
+        you are the person I see my future with,  
+        my comfort, my forever ❤️
+    </div>
+
+    <div id="ring" class="hidden">
+        Freya, will you be mine forever  
+        and someday become my wife? 💍❤️
+    </div>
+</div>
+
+<footer>
+    Made with endless love, just for you 💕
+</footer>
+
+<script>
+    function playMusic() {
+        document.getElementById("music").play();
+    }
+
+    function showLove() {
+        document.getElementById("love").style.display = "block";
+    }
+
+    function proposal() {
+        document.getElementById("ring").style.display = "block";
+    }
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 20 + 15 + "px";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }, 400);
+</script>
+
+</body>
+</html>
